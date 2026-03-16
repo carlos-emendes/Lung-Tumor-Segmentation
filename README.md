@@ -56,9 +56,9 @@ Execute the training script to optimize the U-Net. PyTorch Lightning will automa
 
 4. Evaluation & Visualization
 The Evaluate.py script calculates the Dice Loss and allows you to visualize the CT slices, comparing the Ground Truth (Expert Label) vs. the Model Prediction.
-  ```bash
-python Evaluate.py
-  ```
+     ```bash
+   python Evaluate.py
+     ```
 **Note**: To load your trained weights, edit line 13 in Evaluate.py to point to your specific .ckpt file path.
 
 ---

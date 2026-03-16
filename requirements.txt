@@ -1,0 +1,11 @@
+ -r requirements_torch.txt
+matplotlib
+numpy
+pandas
+opencv-python == 4.13.0.92
+pydicom == 3.0.1
+tqdm
+lightning
+tensorboard
+tensorboardX
+litlogger

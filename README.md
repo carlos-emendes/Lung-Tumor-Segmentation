@@ -78,7 +78,6 @@ Below is a demonstration of the U-Net model segmenting the lung tumor across mul
 | Metric | Value |
 | :--- | :--- |
 | **Best Validation Dice Loss** | **0.157** |
-| **Calculated Dice Score** | **0.85 (85%)** |
 | **Optimizer** | Adam |
 | **Loss Function** | Binary Dice Loss |
 

@@ -72,7 +72,8 @@ $$Dice = \frac{2 |X \cap Y|}{|X| + |Y|}$$
 Below is a demonstration of the U-Net model segmenting the lung tumor across multiple CT slices:
 
 ![Model Prediction Scrolling](assets/ct.gif)
-*Animation: Sequential CT slices showing the original tumor mask (left) vs predicted tumor mask (right) *
+
+Sequential CT slices showing the original tumor mask (left) vs predicted tumor mask (right).
 
 ---
 | Metric | Value |

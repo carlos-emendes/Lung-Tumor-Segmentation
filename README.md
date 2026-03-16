@@ -36,3 +36,55 @@ Clone the repository and install the dependencies:
 git clone [https://github.com/carlos-emendes/Lung-Tumor-Segmentation.git](https://github.com/carlos-emendes/Lung-Tumor-Segmentation.git)
 cd Lung-Tumor-Segmentation
 pip install -r requirements.txt
+```
+
+
+## 🚀 Usage Guide
+1. Data Preparation
+Extract the downloaded dataset folder into the repository root. Ensure the structure follows the Medical Decathlon standard (NIfTI format).
+
+2. Preprocessing
+   Run the following script to convert 3D volumes into 2D slices, apply Hounsfield Unit (HU) normalization, and resize images to $256 \times 256$.
+   ```bash
+   python Preprocessing.py
+   ```
+3. Training
+Execute the training script to optimize the U-Net. PyTorch Lightning will automatically save the best model checkpoints in the /logs directory.
+   ```bash
+   python Training.py
+   ```
+
+4. Evaluation & Visualization
+The Evaluate.py script calculates the Dice Loss and allows you to visualize the CT slices, comparing the Ground Truth (Expert Label) vs. the Model Prediction.
+  ```bash
+python Evaluate.py
+  ```
+
+---
+
+## 📈 Results & Evaluation
+
+The model performance is evaluated using the **Dice Coefficient** (also known as the F1-score for pixels). This metric measures the spatial overlap between the predicted tumor region ($X$) and the ground truth ($Y$), providing a value between 0 and 1, where 1 represents a perfect match.
+
+$$Dice = \frac{2 |X \cap Y|}{|X| + |Y|}$$
+
+### Qualitative Analysis (Model in Action)
+Below is a demonstration of the U-Net model segmenting the lung tumor across multiple CT slices:
+
+![Model Prediction Scrolling](assets/ct.gif)
+*Animation: Sequential CT slices showing the original tumor mask (left) vs predicted tumor mask (right) *
+
+---
+| Metric | Value |
+| :--- | :--- |
+| **Best Validation Dice Loss** | **0.157** |
+| **Calculated Dice Score** | **0.85 (85%)** |
+| **Optimizer** | Adam |
+| **Loss Function** | Binary Dice Loss |
+
+## 🤝 Acknowledgments
+
+* **Coursework:** This project was developed as part of the [Deep Learning with PyTorch for Medical Image Analysis](https://www.udemy.com/course/deep-learning-with-pytorch-for-medical-image-analysis/) course on Udemy.
+* **Dataset:** We thank the **Medical Segmentation Decathlon** (Task06_Lung) for providing the open-source data.
+* **Architecture:** Based on the original U-Net paper: *U-Net: Convolutional Networks for Biomedical Image Segmentation* by Ronneberger et al.
+* **License:** This project is licensed under [CC-BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).

@@ -59,7 +59,7 @@ The Evaluate.py script calculates the Dice Loss and allows you to visualize the 
   ```bash
 python Evaluate.py
   ```
-Note: To load your trained weights, edit line 13 in Evaluate.py to point to your specific .ckpt file path.
+**Note**: To load your trained weights, edit line 13 in Evaluate.py to point to your specific .ckpt file path.
 
 ---
 

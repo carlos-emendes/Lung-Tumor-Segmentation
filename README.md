@@ -89,7 +89,8 @@ Sequential CT slices showing the Ground Truth mask (left) vs U-Net segmentation 
 | :--- | :--- |
 | **Best Validation Dice Loss** | **0.157** |
 | **Optimizer** | Adam |
-| **Loss Function** | Binary Dice Loss |
+| **Loss Function** | Binary Cross Entropy with Logits (BCEWithLogitsLoss). |
+| **Sampling Strategy** | WeightedRandomSampler used to mitigate class imbalance between tumorous and non-tumorous slices.|
 
 ## 🤝 Acknowledgments
 

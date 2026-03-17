@@ -72,7 +72,11 @@ $$Dice = \frac{2 |X \cap Y|}{|X| + |Y|}$$
 ### Qualitative Analysis (Model in Action)
 Below is a demonstration of the U-Net model segmenting the lung tumor across multiple CT slices:
 
-![Model Prediction Scrolling](assets/ct.gif)
+<p align="center">
+  <video src="ct_with_prediction_id45.mp4" width="800" autoplay loop muted playsinline></video>
+  <br>
+  <em>U-Net Prediction vs. Ground Truth (Axial View)</em>
+</p>
 
 Sequential CT slices showing the original tumor mask (left) vs predicted tumor mask (right).
 

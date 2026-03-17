@@ -89,6 +89,7 @@ for i in range(ct.shape[-1]):
 
 
 fig, ax = plt.subplots(1, 2)
+fig.suptitle("Lung Tumor Detection", fontsize=12, y=0.95, color='gray')
 im_ct_1 = ax[0].imshow(scan[0], cmap='gray')
 mask_data_0 = np.ma.masked_where(mask_[0] == 0, mask_[0])
 im_mask_1 = ax[0].imshow(mask_data_0, cmap='autumn', alpha=0.5)
@@ -109,9 +110,10 @@ def update(frame):
     masked_slice = np.ma.masked_where(current_mask == 0, current_mask)
     im_mask_2.set_array(masked_slice)
 
-    ax[0].set_title(f' True Slice {frame}')
-    ax[1].set_title(f' Predicted Slice {frame}')
-    # return [im_ct_2,im_mask_2]
+    ax[0].set_title("Ground Truth", fontsize=14, fontweight='bold')
+    ax[0].set_xlabel(f"Axial Slice: {frame}/{len(scan)}", fontsize=10, color='gray')
+    ax[1].set_title("U-Net Segmentation", fontsize=14, fontweight='bold')
+    ax[1].set_xlabel(f"Axial Slice: {frame}/{len(scan)}", fontsize=10, color='gray')
     return [im_ct_1, im_mask_1, im_ct_2, im_mask_2]
 
 
